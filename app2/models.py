@@ -160,3 +160,84 @@ class TypeTran(models.Model):
     class Meta:
         db_table = "TYPETRAN"
 
+class NatureDesignation(models.Model):
+    #CREATE NEW TABLE
+    
+class UnderCollege(models.Model):
+    UNO = models.IntegerField(default=None,null=True, blank=True)
+    UGPG_NAME = models.CharField(max_length=20,null=True, blank=True)
+    LUGPG = models.CharField(max_length=50,null=True, blank=True)
+
+    class Meta:
+        db_table = "UGPG"
+
+
+class Loan(models.Model):
+    #CREATE NEW TABLE 
+    
+class StaffType(models.Model):
+    STNO = models.IntegerField(default=None,null=True, blank=True)
+    STAFF_TYPE = models.CharField(max_length=20,null=True, blank=True)
+    class Meta:
+        db_table = "STAFFTYPE"
+
+class InstallmentType(models.Model):
+    INO = models.IntegerField(default=None,null=True, blank=True)
+    IDNO = models.IntegerField(default=None,null=True, blank=True)
+    PAYHEAD = models.CharField(max_length=3,null=True, blank=True)
+    MONAMT = models.IntegerField(default=None,null=True, blank=True)
+    INSTALNO = models.IntegerField(default=None,null=True, blank=True)
+    TOTAMT = models.IntegerField(default=None,null=True, blank=True)
+    REM = models.CharField(max_length=200,null=True, blank=True)
+    STOP = models.IntegerField(default=None,null=True, blank=True)
+    EXPDT = #Date
+    PAIDNO = models.IntegerField(default=None,null=True, blank=True)
+    MON = models.CharField(max_length=7,null=True, blank=True)
+    NEW = models.IntegerField(default=None,null=True, blank=True)
+    REF_NO = models.CharField(max_length=35,null=True, blank=True)
+    DESP_NO = models.CharField(max_length=35,null=True, blank=True)
+    DESP_DT = #Date
+    START_DT = #Date
+    DEFA_AMT = models.IntegerField(default=None,null=True, blank=True)
+    PRO_AMT = models.IntegerField(default=None,null=True, blank=True)
+    CODE = models.CharField(max_length=20,null=True, blank=True)
+    IBNO = models.IntegerField(default=None,null=True, blank=True)
+    MONYEAR = models.CharField(max_length=30,null=True, blank=True)
+    STOP1 = models.IntegerField(default=None,null=True, blank=True)
+    BAL_AMT = models.IntegerField(default=None,null=True, blank=True)
+    REGULAR = models.IntegerField(default=None,null=True, blank=True)
+    LTNO = models.IntegerField(default=None,null=True, blank=True)
+    
+    class Meta:
+        db_table = "INSTALLMENT"
+    
+    # PER = models.IntegerField(default=None,null=True, blank=True)
+    # FIXAMT = models.IntegerField(default=None,null=True, blank=True)
+    # T_RANGE = models.IntegerField(default=None,null=True, blank=True)
+    # F_RANGE = models.IntegerField(default=None,null=True, blank=True)
+    # ITNO = models.IntegerField(default=None,null=True, blank=True)
+    # LTNO = models.IntegerField(default=None,null=True, blank=True)
+    # REGULAR = models.IntegerField(default=None,null=True, blank=True)
+    # BAL_AMT = models.IntegerField(default=None,null=True, blank=True)
+    # STOP1 = models.IntegerField(default=None,null=True, blank=True)
+    # IBNO = models.IntegerField(default=None,null=True, blank=True)
+    # PRO_AMT = models.IntegerField(default=None,null=True, blank=True)
+    # PRO_AMT = models.IntegerField(default=None,null=True, blank=True)
+    # DEFA_AMT = models.IntegerField(default=None,null=True, blank=True)
+    # NEW = models.IntegerField(default=None,null=True, blank=True)
+    # PAID_NO = models.IntegerField(default=None,null=True, blank=True)
+    # STOP = models.IntegerField(default=None,null=True, blank=True)
+    # NEW = models.IntegerField(default=None,null=True, blank=True)
+    # TOTALAMT = models.IntegerField(default=None,null=True, blank=True)
+    # INSTAL_NO = models.IntegerField(default=None,null=True, blank=True)
+    # MONAMT = models.IntegerField(default=None,null=True, blank=True)
+    
+    # USER_PASS = models.CharField(max_length=3,null=True, blank=True)
+    # USER_NAME = models.CharField(max_length=3,null=True, blank=True)
+    # IPADDRESS = models.CharField(max_length=3,null=True, blank=True)
+    # MONYEAR = models.CharField(max_length=3,null=True, blank=True)
+    # CODE = models.CharField(max_length=3,null=True, blank=True)
+    # DESP_NO = models.CharField(max_length=3,null=True, blank=True)
+    
+    # PAYHEAD = models.CharField(max_length=3,null=True, blank=True)
+    
