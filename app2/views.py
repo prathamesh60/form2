@@ -2,6 +2,56 @@ from django.shortcuts import render,redirect
 from app2.forms import *
 from app2.models import *
 
+# def religion(request):
+#     if request.method == "POST":
+#       form1= ReligionForm(request.POST)
+#       if form1.is_valid():
+#           try:
+#               form1.save()
+#               return redirect("/religion")
+#           except:
+#               pass
+#     else:
+#         form1= ReligionForm()
+#         religion1 = Religion.objects.all()
+#         return render(request,"religion/register.html", {"form1":form1, "religion1": religion1})
+
+
+
+# def show_religion(request):
+#     religion1 = Religion.objects.all()
+
+#     return render(request, "religion/index.html", {"religion1": religion1} )
+# def edit(request,id):
+#     religion2 = Religion.objects.get(RELIGION_NO=id)
+#     return render(request, "religion/edit.html", { 'religion2':religion2})
+# def modify_religion(request,id):
+#     religion2 =Religion.objects.get(RELIGION_NO=id)
+#     form1 = ReligionForm(request.POST, instance = religion2)
+#     # religion2.RELIGION_NO = form1.RELIGION_NO
+#     # religion2.RELIGION_NAME = form1.RELIGION_NAME
+#     # form1.RELIGION_NO = religion2.A.value#religion2.RELIGION_NO
+#     # form1.RELIGION_NAME = religion2.B.value#religion2.RELIGION_NAME
+#     if form1.is_valid():
+#         form1.save()
+#         return redirect("/religion")
+#     return render(request, "religion/edit.html", { 'form1':religion2})
+# def delete_religion(request,id):
+#     religion3 =Religion.objects.get(id=id)
+#     religion3.delete()
+#     return redirect("/show_religion")
+# Create your views here.
+
+# class ClassName(object):
+#     # """docstring for ."""
+#     model=
+
+from django.views.generic.edit import UpdateView 
+from django.shortcuts import render,redirect
+from app2.forms import *
+from app2.models import *
+
+#start for religion model
 def religion(request):
     if request.method == "POST":
       form1= ReligionForm(request.POST)
@@ -22,26 +72,184 @@ def show_religion(request):
     religion1 = Religion.objects.all()
 
     return render(request, "religion/index.html", {"religion1": religion1} )
-def edit(request,id):
-    religion2 = Religion.objects.get(RELIGION_NO=id)
-    return render(request, "religion/edit.html", { 'religion2':religion2})
-def modify_religion(request,id):
-    religion2 =Religion.objects.get(RELIGION_NO=id)
-    form1 = ReligionForm(request.POST, instance = religion2)
-    # religion2.RELIGION_NO = form1.RELIGION_NO
-    # religion2.RELIGION_NAME = form1.RELIGION_NAME
-    # form1.RELIGION_NO = religion2.A.value#religion2.RELIGION_NO
-    # form1.RELIGION_NAME = religion2.B.value#religion2.RELIGION_NAME
-    if form1.is_valid():
-        form1.save()
-        return redirect("/religion")
-    return render(request, "religion/edit.html", { 'form1':religion2})
+
+class ReligionUpdateView(UpdateView): 
+    # specify the model you want to use 
+    model = Religion
+  
+    # specify the fields 
+    fields = [ 
+        "RELIGION_NO", 
+        "RELIGION_NAME"
+    ] 
+   
+    success_url ="religion"
+
 def delete_religion(request,id):
     religion3 =Religion.objects.get(id=id)
     religion3.delete()
-    return redirect("/show_religion")
-# Create your views here.
+    return redirect("/religion")
 
-# class ClassName(object):
-#     # """docstring for ."""
-#     model=
+#End for religion model
+
+#caste 
+
+def caste(request):
+    if request.method == "POST":
+      form1= CasteForm(request.POST)
+      if form1.is_valid():
+          try:
+              form1.save()
+              return redirect("/caste")
+          except:
+              pass
+    else:
+        form1= CasteForm()
+        caste1 = Caste.objects.all()
+        return render(request,"caste/register.html", {"form1":form1, "caste1": caste1})
+
+
+def show_caste(request):
+    caste1 = Caste.objects.all()
+
+    return render(request, "caste/index.html", {"caste1": caste1} )
+
+
+class CasteUpdateView(UpdateView): 
+    # specify the model you want to use 
+    model = Caste
+  
+    # specify the fields 
+    fields = [ 
+        "CASTE_NO", 
+        "CASTE_NAME"
+    ] 
+   
+    success_url ="caste"
+
+def delete_caste(request,id):
+    caste3 =Caste.objects.get(id=id)
+    caste3.delete()
+    return redirect("/caste")
+#End of caste
+
+def suplhead(request):
+    if request.method == "POST":
+      form1= SuplHeadForm(request.POST)
+      if form1.is_valid():
+          try:
+              form1.save()
+              return redirect("/suplhead")
+          except:
+              pass
+    else:
+        form1=SuplHeadForm()
+        suplhead1 = SuplHead.objects.all()
+        return render(request,"caste/register.html", {"form1":form1, "caste1": suplhead1})
+
+class SuplHeadUpdateView(UpdateView): 
+    # specify the model you want to use 
+    model = SuplHead
+  
+    # specify the fields 
+    fields = [ 
+        "SUPLNO", 
+        " SUPLHEAD_NAME"
+    ] 
+   
+    success_url ="suplhead"
+
+def delete_suplhead(request,id):
+    suplhead3 =SuplHead.objects.get(id=id)
+    suplhead3.delete()
+    return redirect("/suplhead")
+
+
+
+
+# title
+
+#start for title model
+def title(request):
+    if request.method == "POST":
+      form1= TitleForm(request.POST)
+      if form1.is_valid():
+          try:
+              form1.save()
+              return redirect("/title")
+          except:
+              pass
+    else:
+        form1= TitleForm()
+        title1 = Title.objects.all()
+        return render(request,"title/register.html", {"form1":form1, "title1": title1})
+
+
+#show title
+def show_title(request):
+    title1 = Title.objects.all()
+
+    return render(request, "title/index.html", {"title1": title1} )
+
+#update title
+class TitleUpdateView(UpdateView): 
+    # specify the model you want to use 
+    model = Title
+  
+    # specify the fields 
+    fields = [ 
+        "TITLE_NO", 
+        "TITLE_NAME"
+    ] 
+   
+    success_url ="title"
+
+#delete title
+def delete_title(request,id):
+    title3 =Title.objects.get(id=id)
+    title3.delete()
+    return redirect("/title")
+
+
+#category
+
+#start for title model
+def category(request):
+    if request.method == "POST":
+      form1= CategoryForm(request.POST)
+      if form1.is_valid():
+          try:
+              form1.save()
+              return redirect("/category")
+          except:
+              pass
+    else:
+        form1= CategoryForm()
+        category1 = Category.objects.all()
+        return render(request,"category/register.html", {"form1":form1, "category1": category1})
+
+
+#show category
+def show_category(request):
+    category1 = Category.objects.all()
+
+    return render(request, "category/index.html", {"category1": category1} )
+
+#update category
+class CategoryUpdateView(UpdateView): 
+    # specify the model you want to use 
+    model = Title
+  
+    # specify the fields 
+    fields = [ 
+        "CATEGORY_NO", 
+        "CATEGORY_NAME"
+    ] 
+   
+    success_url ="category"
+
+#delete category
+def delete_category(request,id):
+    category3 =Category.objects.get(id=id)
+    category3.delete()
+    return redirect("/category")
