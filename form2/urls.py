@@ -24,23 +24,34 @@ urlpatterns = [
 #     path('edit/<int:id>',views.edit),
 #     path('update/<int:id>',views.modify_religion),
     # path('religion/create',views.Create.as_view(),name='create_religion'),
+    path('admin/', admin.site.urls),
+    #religion
     path('religion',views.religion),
     path('show_religion',views.show_religion),
     path('delete/<int:id>',views.delete_religion),
-    path('<pk>/update', views.ReligionUpdateView.as_view()),
+    path('<pk>/update', views.ReligionUpdateView.as_view()), 
     re_path(r'^\d+/religion',views.religion),
+    #title
+    path('title',views.title),
+    path('show_title',views.show_title),
+    path('delete_title/<int:id>',views.delete_title),
+    path('<pk>/update_title', views.TitleUpdateView.as_view()), 
+    re_path(r'^\d+/title',views.title),
+    #caste
     path('caste',views.caste),
-    path('<pk>/update_caste', views.CasteUpdateView.as_view()),
+    path('show_caste',views.show_caste),
+    path('<pk>/update_caste', views.CasteUpdateView.as_view()), 
     re_path(r'^\d+/caste',views.caste),
     path('delete_caste/<int:id>',views.delete_caste),
+    #category
+    path('category',views.category),
+    path('show_category',views.show_category),
+    path('<pk>/update_category', views.CategoryUpdateView.as_view()), 
+    re_path(r'^\d+/category',views.category),
+    path('delete_category/<int:id>',views.delete_category),
+    #suplhead
     path('suplhead',views.suplhead),
     path('<pk>/suplhead', views.SuplHeadUpdateView.as_view()),
     re_path(r'^\d+/suplhead',views.suplhead),
     path('delete_suplhead/<int:id>',views.delete_suplhead),
-
-    path('category',views.category),
-    path('show_category',views.show_category),
-    path('delete_category/<int:id>',views.delete_category),
-    path('<pk>/update_category', views.CategoryUpdateView.as_view()),
-    re_path(r'^\d+/category',views.category),
 ]
