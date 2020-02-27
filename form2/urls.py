@@ -18,10 +18,29 @@ from django.urls import path
 from app2 import views
 
 urlpatterns = [
-    path('admin/', admin.site.urls),
+#     path('admin/', admin.site.urls),
+#     path('religion',views.religion),
+#     path('show_religion',views.show_religion),
+#     path('edit/<int:id>',views.edit),
+#     path('update/<int:id>',views.modify_religion),
+    # path('religion/create',views.Create.as_view(),name='create_religion'),
     path('religion',views.religion),
     path('show_religion',views.show_religion),
-    path('edit/<int:id>',views.edit),
-    path('update/<int:id>',views.modify_religion),
-    # path('religion/create',views.Create.as_view(),name='create_religion'),
+    path('delete/<int:id>',views.delete_religion),
+    path('<pk>/update', views.ReligionUpdateView.as_view()),
+    re_path(r'^\d+/religion',views.religion),
+    path('caste',views.caste),
+    path('<pk>/update_caste', views.CasteUpdateView.as_view()),
+    re_path(r'^\d+/caste',views.caste),
+    path('delete_caste/<int:id>',views.delete_caste),
+    path('suplhead',views.suplhead),
+    path('<pk>/suplhead', views.SuplHeadUpdateView.as_view()),
+    re_path(r'^\d+/suplhead',views.suplhead),
+    path('delete_suplhead/<int:id>',views.delete_suplhead),
+
+    path('category',views.category),
+    path('show_category',views.show_category),
+    path('delete_category/<int:id>',views.delete_category),
+    path('<pk>/update_category', views.CategoryUpdateView.as_view()),
+    re_path(r'^\d+/category',views.category),
 ]
