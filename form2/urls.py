@@ -54,4 +54,20 @@ urlpatterns = [
     path('<pk>/suplhead', views.SuplHeadUpdateView.as_view()),
     re_path(r'^\d+/suplhead',views.suplhead),
     path('delete_suplhead/<int:id>',views.delete_suplhead),
+    
+    path('MainDept', views.MainDept_create.as_view()),
+    path('MainDeptShowView', views.MainDeptShowView.as_view()),
+    # path('<pk>/MainDeptUpdateView', views.MainDeptUpdateView.as_view()),
+    
+    path('MainDesignation', views.MainDesignation_create.as_view()),
+    path('MainDesignationShowView', views.MainDesignationShowView.as_view()),
+    # path('<pk>/MainDeptUpdateView', views.MainDeptUpdateView.as_view()),
+
+    path('Staff', views.Staff_create.as_view()),
+    path('StaffShowView', views.StaffShowView.as_view()),
+    # path('<pk>/MainDeptUpdateView', views.MainDeptUpdateView.as_view()),
+
+    path('Scale', views.Scale_create.as_view()),
+    path('ScaleShowView', views.ScaleShowView.as_view()),
+    # path('<pk>/MainDeptUpdateView', views.MainDeptUpdateView.as_view()),
 ]
