@@ -35,3 +35,23 @@ class TypeTranForm(forms.ModelForm):
     class Meta:
         model = TypeTran
         fields = "__all__"
+
+class MainDeptForm(forms.ModelForm):
+    class Meta:
+        model = MainDept
+        fields = "__all__"
+
+class MainDesignation(forms.ModelForm):
+    class Meta:
+        model = MainDesignation
+        fields = "__all__"
+
+class Staff(forms.ModelForm):
+    class Meta:
+        model = Staff
+        fields = "__all__"
+
+class Scale(forms.ModelForm):
+    class Meta:
+        model = Scale
+        fields = "__all__"
