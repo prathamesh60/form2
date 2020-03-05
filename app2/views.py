@@ -253,3 +253,85 @@ def delete_category(request,id):
     category3 =Category.objects.get(id=id)
     category3.delete()
     return redirect("/category")
+
+class MainDept_create(CreateView):
+
+    # specify the model for create view
+    model = MainDept
+
+    # specify the fields to be displayed
+
+    fields = ['DEPT_NO', 'DEPT_NAME', 'SDEPT']
+
+    success_url ="MainDeptShowView"
+
+class MainDeptShowView(ListView):
+    # specify the model you want to use
+    model = MainDept
+
+    # specify the fields
+    # fields = ['DEPT_NO', 'DEPT_NAME', 'SDEPT']
+
+    # success_url ="MainDept"
+
+class MainDesignation_create(CreateView):
+
+    # specify the model for create view
+    model = MainDesignation
+
+    # specify the fields to be displayed
+
+    fields = "__all__"
+
+    success_url ="MainDesignationShowView"
+
+class MainDesignationShowView(ListView):
+    # specify the model you want to use
+    model = MainDesignation
+
+    # specify the fields
+    # fields = ['DEPT_NO', 'DEPT_NAME', 'SDEPT']
+
+    # success_url ="MainDept"
+
+class Staff_create(CreateView):
+
+    # specify the model for create view
+    model = Staff
+
+    # specify the fields to be displayed
+
+    fields = "__all__"
+
+    success_url ="StaffShowView"
+
+class StaffShowView(ListView):
+    # specify the model you want to use
+    model = Staff
+
+    # specify the fields
+    # fields = ['DEPT_NO', 'DEPT_NAME', 'SDEPT']
+
+    # success_url ="MainDept"
+
+class Scale_create(CreateView):
+
+    # specify the model for create view
+    model = Scale
+
+    # specify the fields to be displayed
+
+    fields = "__all__"
+
+    success_url ="ScaleShowView"
+
+class ScaleShowView(ListView):
+    # specify the model you want to use
+    model = Scale
+
+    # specify the fields
+    # fields = ['DEPT_NO', 'DEPT_NAME', 'SDEPT']
+
+    # success_url ="MainDept"
+
+
