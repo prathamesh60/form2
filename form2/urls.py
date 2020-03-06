@@ -70,4 +70,13 @@ urlpatterns = [
     path('Scale', views.Scale_create.as_view()),
     path('ScaleShowView', views.ScaleShowView.as_view()),
     # path('<pk>/MainDeptUpdateView', views.MainDeptUpdateView.as_view()),
+     #typetran
+    path('typetran', views.TypeTranCreateView.as_view()),
+    path('show_typetran', views.TypeTranListView.as_view()),
+    #appointment
+    path('appointment', views.AppointmentCreateView.as_view()),
+    path('show_appointment', views.AppointmentListView.as_view()),
+    #undercollege
+    path('undercollege', views.UnderCollegeCreateView.as_view()),
+    path('show_undercollege', views.UnderCollegeListView.as_view()),
 ]
