@@ -334,4 +334,50 @@ class ScaleShowView(ListView):
 
     # success_url ="MainDept"
 
+class TypeTranCreateView(CreateView): 
+    # specify the model you want to use 
+    model = TypeTran 
+    # specify the fields 
+    fields ="__all__"
+  
+    # can specify success url 
+    # url to redirect after sucessfully 
+    # updating details 
+    success_url ="show_typetran"
 
+class TypeTranListView(ListView): 
+  
+    # specify the model for list view 
+    model = TypeTran
+ 
+class AppointmentCreateView(CreateView): 
+    # specify the model you want to use 
+    model = Appointment
+    # specify the fields 
+    fields = "__all__"
+    # can specify success url 
+    # url to redirect after sucessfully 
+    # updating details 
+    success_url ="show_appointment"
+
+class AppointmentListView(ListView): 
+  
+    # specify the model for list view 
+    model = Appointment
+
+class UnderCollegeCreateView(CreateView): 
+    # specify the model you want to use 
+    model = UnderCollege
+    # specify the fields 
+    fields = "__all__"
+    # can specify success url 
+    # url to redirect after sucessfully 
+    # updating details 
+    success_url ="show_undercollege"
+
+class UnderCollegeListView(ListView): 
+  
+    # specify the model for list view 
+    model = UnderCollege
+
+ 
