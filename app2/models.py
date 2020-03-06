@@ -74,7 +74,8 @@ class Religion(models.Model):
     class Meta:
         db_table = "RELIGION"
 
-class Appointment:
+
+class Appointment(models.Model):
     APPOINT_NO = models.IntegerField(default=None,null=True, blank=True)
     APPOINT_NAME = models.CharField(max_length=25,null=True, blank=True)
     l1 = models.IntegerField(default=None,null=True, blank=True)
@@ -125,6 +126,7 @@ class Appointment:
 
     class Meta:
         db_table = "APPOINT"
+
 
 class SuplHead(models.Model):
     SUPLNO = models.IntegerField(default=None,null=True, blank=True)
